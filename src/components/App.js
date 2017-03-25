@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Chat from '../components/Chat'
+import VisibleChats from '../containers/VisibleChats.js'
 
 const App = () => (
   <div className="App">
@@ -11,8 +11,7 @@ const App = () => (
     </div>
 
     <div className="container">
-      <Chat />
-      <Chat />
+      <VisibleChats />
     </div>
   </div>
 )

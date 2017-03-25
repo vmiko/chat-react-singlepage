@@ -4,12 +4,12 @@ const message = (state, action) => {
     case 'ADD_MESSAGE':
       return {
         id: action.id,
-        message: action.message
+        user: action.user,
+        text: action.text
       }
 
     default:
       return state
-
   }
 }
 

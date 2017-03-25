@@ -6,7 +6,16 @@ import App from './components/App';
 import reducer from './reducers'
 import './index.css';
 
-const store = createStore(reducer)
+
+const persitedChats = {
+  chats: [
+    {id: 0, user: "Utilisateur 1"},
+    {id: 1, user: "Utilisateur 2"},
+    {id: 2, user: "Utilisateur 3"}
+  ],
+}
+
+const store = createStore(reducer, persitedChats)
 
 ReactDOM.render(
   <Provider store={store}>

@@ -6,7 +6,8 @@ const MessageList = ({ messages }) => (
     {messages.map(message =>
       <Message
         key={message.id}
-        {...message}
+        user={message.user}
+        text={message.text}
       />
     )}
   </ul>
@@ -15,7 +16,8 @@ const MessageList = ({ messages }) => (
 MessageList.propTypes = {
   messages: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
-    message: PropTypes.string.isRequired
+    user: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
   }).isRequired).isRequired
 }
 

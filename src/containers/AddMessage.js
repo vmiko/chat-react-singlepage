@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addMessage } from '../actions'
 
-let AddMessage = ({ dispatch }) => {
+let AddMessage = ({ user, dispatch }) => {
+
   let input
 
   return (
@@ -12,7 +13,7 @@ let AddMessage = ({ dispatch }) => {
         if (!input.value.trim()) {
           return
         }
-        dispatch(addMessage(input.value))
+        dispatch(addMessage(user, input.value))
         input.value = ''
       }}>
         <input ref={node => {
@@ -26,5 +27,9 @@ let AddMessage = ({ dispatch }) => {
   )
 }
 AddMessage = connect()(AddMessage)
+
+AddMessage.propTypes = {
+  user: PropTypes.string.isRequired
+}
 
 export default AddMessage
