@@ -13,9 +13,8 @@ export const addChat = (user) => ({
   user
 })
 
-let nextUserId = 0
-export const addUser = (user) => ({
-  type: 'ADD_USER',
-  id: nextUserId++,
+export const changeUsername = (id, user) => ({
+  type: 'CHANGE_USERNAME',
+  id,
   user
 })

@@ -1,3 +1,4 @@
+import dotProp from 'dot-prop-immutable'
 
 const chat = (state, action) => {
   switch (action.type) {
@@ -18,8 +19,12 @@ const chats = (state = [], action) => {
     case 'ADD_CHAT':
       return [
         ...state,
-        chat(undefined, action)  //Pourquoi undefined ?
+        chat(undefined, action)
       ]
+
+    case 'CHANGE_USERNAME':
+      // Immutable update chats object
+      return dotProp.set(state, `${action.id}.user`, action.user)
 
     default:
       return state

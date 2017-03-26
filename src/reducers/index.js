@@ -4,7 +4,7 @@ import chats from './chats'
 
 const chatApp = combineReducers({
   messages,
-  chats
+  chats,
 })
 
 export default chatApp

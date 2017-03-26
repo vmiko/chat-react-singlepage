@@ -18,7 +18,7 @@ const messages = (state = [], action) => {
     case 'ADD_MESSAGE':
       return [
         ...state,
-        message(undefined, action)  //Pourquoi undefined ?
+        message(undefined, action)
       ]
 
     default:
