@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import reducer from './reducers'
 import './styles/css/index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 
 
 const persitedChats = {
