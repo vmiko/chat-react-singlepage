@@ -2,6 +2,7 @@
   "name": "chat-iadvize",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zzedify.github.io/chat-react-singlepage"
   "dependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
