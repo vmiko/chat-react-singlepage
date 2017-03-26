@@ -1,15 +1,12 @@
 import React from 'react';
-import { Grid, Row } from 'react-bootstrap';
-import logo from './logo.svg';
+import { Grid, Row, PageHeader } from 'react-bootstrap';
 import '../styles/css/App.css';
 import VisibleChats from '../containers/VisibleChats.js'
+import githubLogo from '../images/GitHub-Mark-64px.png'
 
 const App = () => (
   <div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </div>
+    <PageHeader>Application de chat en React + Redux <small>by Victor Mikolajczyk</small></PageHeader>
 
     <div>
       <Grid>
@@ -18,6 +15,10 @@ const App = () => (
         </Row>
       </Grid>
     </div>
+    <hr/>
+    <a href="https://github.com/zzedify/chat-react-singlepage">
+      <img src={githubLogo}/>
+    </a>
   </div>
 )
 

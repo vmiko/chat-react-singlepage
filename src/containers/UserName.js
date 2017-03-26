@@ -17,7 +17,7 @@ let UserName = ({ id, userid, users, dispatch }) => {
         {
           e.preventDefault()
           if (!input.value.trim()) {
-            input.value = 'Utilisateur '+ (id+1)
+            input.value = username
           }
 
           if (input.value.trim() === username) {

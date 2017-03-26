@@ -6,9 +6,16 @@
   }
 
   .user.me .well {
-    background-color: aquamarine;
+    background-color: #1bc74e;
+    p {
+      color: #fff
+    }
   }
 
   .user.others .well {
+  }
+
+  .message-list-panel {
+    min-height: 300px;
   }
 }
