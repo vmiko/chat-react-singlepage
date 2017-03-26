@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Row } from 'react-bootstrap';
 import logo from './logo.svg';
 import '../styles/css/App.css';
 import VisibleChats from '../containers/VisibleChats.js'
@@ -10,8 +11,12 @@ const App = () => (
       <h2>Welcome to React</h2>
     </div>
 
-    <div className="container">
-      <VisibleChats />
+    <div>
+      <Grid>
+        <Row className="show-grid">
+          <VisibleChats />
+        </Row>
+      </Grid>
     </div>
   </div>
 )

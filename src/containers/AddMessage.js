@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { Col, FormControl, FormGroup, InputGroup, Button  } from 'react-bootstrap'
 import { addMessage } from '../actions'
 
 let AddMessage = ({ user, dispatch }) => {
@@ -7,7 +8,7 @@ let AddMessage = ({ user, dispatch }) => {
   let input
 
   return (
-    <div>
+    <Col xs={12} md={12} className="add-message">
       <form onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
@@ -16,14 +17,23 @@ let AddMessage = ({ user, dispatch }) => {
         dispatch(addMessage(user, input.value))
         input.value = ''
       }}>
-        <input ref={node => {
-          input = node
-        }} />
-        <button type="submit">
-          OK
-        </button>
+        <FormGroup controlId="form-add-message">
+          <InputGroup>
+            <FormControl
+              componentClass="textarea"
+              placeholder="Votre message ici..."
+              inputRef={node => {
+                input = node
+              }}
+              rows="1"
+            />
+            <InputGroup.Button>
+              <Button type="submit">Ok</Button>
+            </InputGroup.Button>
+          </InputGroup>
+        </FormGroup>
       </form>
-    </div>
+    </Col>
   )
 }
 AddMessage = connect()(AddMessage)

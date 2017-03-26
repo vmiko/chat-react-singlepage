@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
+import { Col } from 'react-bootstrap';
 import VisibleMessageList from '../containers/VisibleMessageList'
 import AddMessage from '../containers/AddMessage'
 import UserName from '../containers/UserName'
 
 const Chat = ({id, user}) => (
-  <div id={"chat-"+id} className="chat">
+  <Col xs={12} md={6} id={"chat-"+id} className="chat">
     <UserName
       id={id}
       user={user}
@@ -13,7 +14,7 @@ const Chat = ({id, user}) => (
     <AddMessage
       user={user}
     />
-  </div>
+  </Col>
 )
 
 Chat.propTypes = {

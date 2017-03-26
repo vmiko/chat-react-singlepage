@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { Col, FormControl, FormGroup, InputGroup, Button } from 'react-bootstrap'
 import { changeUsername, addMessage } from '../actions'
 
 let UserName = ({ id, user, dispatch }) => {
   let input
 
   return (
-    <div>
+    <Col xs={12} md={12} className="change-username">
       <form onSubmit={e =>
         {
           e.preventDefault()
@@ -17,19 +18,23 @@ let UserName = ({ id, user, dispatch }) => {
           dispatch(addMessage(undefined, user + " a changé son nom en " +input.value))
         }
       }>
-        <input
-          type="text"
-          name="username"
-          defaultValue={user}
-          ref={node => {
-            input = node
-          }}
-        />
-        <button type="submit">
-          OK
-        </button>
+        <FormGroup controlId="form-username">
+          <InputGroup>
+            <FormControl type="text"
+              placeholder={user}
+              name="username"
+              defaultValue={user}
+              inputRef={node => {
+                input = node
+              }}
+            />
+            <InputGroup.Button>
+              <Button type="submit">Ok</Button>
+            </InputGroup.Button>
+          </InputGroup>
+        </FormGroup>
       </form>
-    </div>
+    </Col>
   )
 }
 UserName = connect()(UserName)

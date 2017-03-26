@@ -6,14 +6,15 @@ import App from './components/App';
 import reducer from './reducers'
 import './styles/css/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
+//import 'bootstrap/dist/css/bootstrap-theme.css';
+
 
 
 const persitedChats = {
   chats: [
     {id: 0, user: "Utilisateur 1"},
     {id: 1, user: "Utilisateur 2"},
-    {id: 2, user: "Utilisateur 3"}
+    //{id: 2, user: "Utilisateur 3"}
   ],
 }
 
