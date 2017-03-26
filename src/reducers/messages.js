@@ -4,7 +4,7 @@ const message = (state, action) => {
     case 'ADD_MESSAGE':
       return {
         id: action.id,
-        user: action.user,
+        userid: action.userid,
         text: action.text
       }
 

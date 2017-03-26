@@ -3,8 +3,13 @@ import { connect } from 'react-redux'
 import { Col, FormControl, FormGroup, InputGroup, Button } from 'react-bootstrap'
 import { changeUsername, addMessage } from '../actions'
 
-let UserName = ({ id, user, dispatch }) => {
+const mapStateToProps = (state) => ({
+  users: state.users
+})
+
+let UserName = ({ id, userid, users, dispatch }) => {
   let input
+  let username = users[userid].name
 
   return (
     <Col xs={12} md={12} className="change-username">
@@ -14,16 +19,16 @@ let UserName = ({ id, user, dispatch }) => {
           if (!input.value.trim()) {
             input.value = 'Utilisateur '+ (id+1)
           }
-          dispatch(changeUsername(id, input.value))
-          dispatch(addMessage(undefined, user + " a changé son nom en " +input.value))
+          dispatch(changeUsername(userid, input.value))
+          dispatch(addMessage(0, username + " a changé son nom en " +input.value))
         }
       }>
         <FormGroup controlId="form-username">
           <InputGroup>
             <FormControl type="text"
-              placeholder={user}
+              placeholder={username}
               name="username"
-              defaultValue={user}
+              defaultValue={username}
               inputRef={node => {
                 input = node
               }}
@@ -37,11 +42,11 @@ let UserName = ({ id, user, dispatch }) => {
     </Col>
   )
 }
-UserName = connect()(UserName)
+UserName = connect(mapStateToProps)(UserName)
 
 UserName.propTypes = {
   id: PropTypes.number.isRequired,
-  user: PropTypes.string.isRequired
+  userid: PropTypes.number.isRequired
 }
 
 export default UserName

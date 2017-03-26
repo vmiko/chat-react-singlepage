@@ -3,15 +3,16 @@ import { Col } from 'react-bootstrap'
 import Message from './Message'
 import '../styles/css/MessageList.css'
 
-const MessageList = ({ messages, chatUser }) => (
+const MessageList = ({ messages, chatUserId, users }) => (
   <Col xs={12} md={12} className="message-list">
-    {messages.map(message =>
-      <Message
-        key={message.id}
-        user={message.user}
-        text={message.text}
-        chatUser={chatUser}
-      />
+    {messages.map(message => (
+        <Message
+          key={message.id}
+          username={users[message.userid].name}
+          text={message.text}
+          isChatUserAuthor={chatUserId === message.userid}
+        />
+      )
     )}
   </Col>
 )
@@ -19,10 +20,16 @@ const MessageList = ({ messages, chatUser }) => (
 MessageList.propTypes = {
   messages: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
-    user: PropTypes.string,
+    userid: PropTypes.number,
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  chatUser: PropTypes.string.isRequired
+
+  chatUserId: PropTypes.number.isRequired,
+
+  users: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired).isRequired,
 }
 
 export default MessageList

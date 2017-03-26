@@ -2,40 +2,34 @@ import React, { PropTypes } from 'react'
 import { Well } from 'react-bootstrap'
 import '../styles/css/Message.css'
 
-const Message = ({ user, text, chatUser }) => {
+const Message = ({ username, text, isChatUserAuthor }) => {
   // Application message
-  if(typeof user === 'undefined') {
+  if(username === 'system') {
     return <span className="message system">{text}</span>
   }
 
   // User message
-  console.log("------------------------")
-  console.log(chatUser)
-  console.log(user)
-  console.log("------------------------")
-
-  if (chatUser === user) {
+  if (isChatUserAuthor) {
     return (
       <div className="message user me">
-        <span className="message-username">{user}</span>
+        <span className="message-username">{username}</span>
         <Well className="message-text" bsSize="small"><p>{text}</p></Well>
       </div>
     )
   } else {
     return (
       <div className="message user others">
-        <span className="message-username">{user}</span>
+        <span className="message-username">{username}</span>
         <Well className="message-text" bsSize="small"><p>{text}</p></Well>
       </div>
     )
   }
-
 }
 
 Message.propTypes = {
-  user: PropTypes.string,
+  userid: PropTypes.number,
   text: PropTypes.string.isRequired,
-  chatUser: PropTypes.string.isRequired
+  isChatUserAuthor: PropTypes.bool.isRequired
 }
 
 export default Message

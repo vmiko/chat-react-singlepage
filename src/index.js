@@ -6,19 +6,20 @@ import App from './components/App';
 import reducer from './reducers'
 import './styles/css/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
-//import 'bootstrap/dist/css/bootstrap-theme.css';
 
-
-
-const persitedChats = {
+const persitedData = {
   chats: [
-    {id: 0, user: "Utilisateur 1"},
-    {id: 1, user: "Utilisateur 2"},
-    //{id: 2, user: "Utilisateur 3"}
+    {id: 0, userid: 1},
+    {id: 1, userid: 2},
   ],
+  users: [
+    {id: 0, name: "system"},
+    {id: 1, name: "Utilisateur 1"},
+    {id: 2, name: "Utilisateur 2"},
+  ]
 }
 
-const store = createStore(reducer, persitedChats, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(reducer, persitedData, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <Provider store={store}>

@@ -4,22 +4,22 @@ import VisibleMessageList from '../containers/VisibleMessageList'
 import AddMessage from '../containers/AddMessage'
 import UserName from '../containers/UserName'
 
-const Chat = ({id, user}) => (
+const Chat = ({id, userid}) => (
   <Col xs={12} md={6} id={"chat-"+id} className="chat">
     <UserName
       id={id}
-      user={user}
+      userid={userid}
     />
-    <VisibleMessageList chatUser={user} />
+    <VisibleMessageList userid={userid} />
     <AddMessage
-      user={user}
+      userid={userid}
     />
   </Col>
 )
 
 Chat.propTypes = {
   id: PropTypes.number.isRequired,
-  user: PropTypes.string.isRequired
+  userid: PropTypes.number.isRequired
 }
 
 export default Chat;

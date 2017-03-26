@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Col, FormControl, FormGroup, InputGroup, Button  } from 'react-bootstrap'
 import { addMessage } from '../actions'
 
-let AddMessage = ({ user, dispatch }) => {
+let AddMessage = ({ userid, dispatch }) => {
 
   let input
 
@@ -14,7 +14,7 @@ let AddMessage = ({ user, dispatch }) => {
         if (!input.value.trim()) {
           return
         }
-        dispatch(addMessage(user, input.value))
+        dispatch(addMessage(userid, input.value))
         input.value = ''
       }}>
         <FormGroup controlId="form-add-message">
@@ -39,7 +39,7 @@ let AddMessage = ({ user, dispatch }) => {
 AddMessage = connect()(AddMessage)
 
 AddMessage.propTypes = {
-  user: PropTypes.string.isRequired
+  userid: PropTypes.number.isRequired
 }
 
 export default AddMessage

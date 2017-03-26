@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 import MessageList from '../components/MessageList'
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps)
+
   return {
     messages: state.messages,
-    chatUser: ownProps.chatUser
+    chatUserId: ownProps.userid,
+    users: state.users
   }
 }
 
@@ -15,7 +16,7 @@ const VisibleMessageList = connect(
 )(MessageList)
 
 VisibleMessageList.propTypes = {
-  chatUser: PropTypes.string.isRequired,
+  userid: PropTypes.number.isRequired,
 }
 
 export default VisibleMessageList

@@ -7,7 +7,7 @@ const Chats = ({ chats }) => (
       <Chat
         key={chat.id}
         id={chat.id}
-        user={chat.user}
+        userid={chat.userid}
       />
     )}
   </div>
@@ -16,7 +16,7 @@ const Chats = ({ chats }) => (
 Chats.propTypes = {
   chats: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
-    user: PropTypes.string.isRequired
+    userid: PropTypes.number.isRequired
   }).isRequired).isRequired
 }
 
