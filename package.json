@@ -1,5 +1,5 @@
 {
-  "name": "chat-iadvize",
+  "name": "chat-react-singlepage",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://zzedify.github.io/chat-react-singlepage",
@@ -13,17 +13,21 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
+    "gh-pages": "^0.12.0",
     "node-sass": "^4.5.1",
     "npm-run-all": "^4.0.2",
     "react-scripts": "0.9.5"
   },
   "scripts": {
+    "clean": "rm -rf node_modules/gh-pages/.cache",
     "build-css": "node-sass src/styles/scss -o src/styles/css",
     "watch-css": "npm run build-css && node-sass src/styles/scss -o src/styles/css --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
