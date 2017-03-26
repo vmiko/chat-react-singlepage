@@ -1,4 +1,8 @@
 .message-list {
+  .message-list-panel {
+    min-height: 300px;
+  }
+
   .system {
     display: block;
     width: 100%;
@@ -7,15 +11,8 @@
 
   .user.me .well {
     background-color: #1bc74e;
-    p {
-      color: #fff
+    span {
+      color: #fff;
     }
-  }
-
-  .user.others .well {
-  }
-
-  .message-list-panel {
-    min-height: 300px;
   }
 }

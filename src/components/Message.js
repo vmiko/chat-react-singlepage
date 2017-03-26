@@ -8,22 +8,13 @@ const Message = ({ username, text, isChatUserAuthor }) => {
     return <span className="message system">{text}</span>
   }
 
-  // User message
-  if (isChatUserAuthor) {
-    return (
-      <div className="message user me">
-        <span className="message-username">{username}</span>
-        <Well className="message-text" bsSize="small"><p>{text}</p></Well>
-      </div>
-    )
-  } else {
-    return (
-      <div className="message user others">
-        <span className="message-username">{username}</span>
-        <Well className="message-text" bsSize="small"><p>{text}</p></Well>
-      </div>
-    )
-  }
+// User message
+  return (
+    <div className={"message user "+ (isChatUserAuthor ? "me" : "others")}>
+      <span className="message-username">{username}</span>
+      <Well className="message-text" bsSize="small"><span>{text}</span></Well>
+    </div>
+  )
 }
 
 Message.propTypes = {

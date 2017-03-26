@@ -1,7 +1,9 @@
 .message {
-  p {
+  span {
+    display: block;
     text-align: left;
     word-wrap: break-word;
+    white-space: pre-line;
   }
 
   .message-username {
