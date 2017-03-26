@@ -10,7 +10,7 @@ const Chat = ({id, user}) => (
       id={id}
       user={user}
     />
-    <VisibleMessageList />
+    <VisibleMessageList chatUser={user} />
     <AddMessage
       user={user}
     />

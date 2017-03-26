@@ -1,7 +1,15 @@
 .message-list {
-  .system{
+  .system {
     display: block;
     width: 100%;
     color: lightgray
+  }
+
+  .user.me .well {
+    background-color: grey;
+  }
+
+  .user.others .well {
+    background-color: aquamarine;
   }
 }
