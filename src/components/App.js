@@ -17,7 +17,7 @@ const App = () => (
     </div>
     <hr/>
     <a href="https://github.com/zzedify/chat-react-singlepage">
-      <img src={githubLogo}/>
+      <img src={githubLogo} alt=""/>
     </a>
   </div>
 )
