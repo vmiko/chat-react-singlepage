@@ -19,6 +19,10 @@ let UserName = ({ id, userid, users, dispatch }) => {
           if (!input.value.trim()) {
             input.value = 'Utilisateur '+ (id+1)
           }
+
+          if (input.value.trim() === username) {
+            return
+          }
           dispatch(changeUsername(userid, input.value))
           dispatch(addMessage(0, username + " a changé son nom en " +input.value))
         }
