@@ -22,7 +22,6 @@ const chats = (state = [], action) => {
 
     default:
       return state
-
   }
 }
 

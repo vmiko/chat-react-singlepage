@@ -10,12 +10,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 const persitedData = {
   chats: [
     {id: 0, userid: 1},
-    {id: 1, userid: 2},
+    {id: 1, userid: 2}
   ],
   users: [
     {id: 0, name: "system"},
     {id: 1, name: "Utilisateur 1"},
-    {id: 2, name: "Utilisateur 2"},
+    {id: 2, name: "Utilisateur 2"}
   ]
 }
 

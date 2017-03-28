@@ -8,7 +8,7 @@ const Message = ({ username, text, isChatUserAuthor }) => {
     return <span className="message system">{text}</span>
   }
 
-// User message
+  // User message
   return (
     <div className={"message user "+ (isChatUserAuthor ? "me" : "others")}>
       <span className="message-username">{username}</span>

@@ -23,7 +23,6 @@ const messages = (state = [], action) => {
 
     default:
       return state
-
   }
 }
 

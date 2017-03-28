@@ -7,7 +7,6 @@ import githubLogo from '../images/GitHub-Mark-64px.png'
 const App = () => (
   <div className="App">
     <PageHeader>Application de chat en React + Redux <small>by Victor Mikolajczyk</small></PageHeader>
-
     <div>
       <Grid>
         <Row className="show-grid">
